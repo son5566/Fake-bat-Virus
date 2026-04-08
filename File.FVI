@@ -15,24 +15,24 @@ cls
 
 :: Listing files (The "Matrix" effect)
 dir /s /b C:\Windows\System32 | findstr /i ".dll"
-timeout /t 4
+timeout /t 4 >nul
 cls
 
 color b
 echo [!]ViGet[!] : Vi Downloader
 echo [!]UpDatE (v1.9): Fix Errors, Download Uri
-timeout /t 3
+timeout /t 3 >nul
 cls
 
 echo Loading Vi Uri ...
 :: Fixed variable syntax
 set "URI=[Unknown 404]"
 echo Status: %URI%
-timeout /t 3
+timeout /t 3 >nul
 cls
 
 dir /s /b C:\Windows\System32 | findstr /i ".dll"
-timeout /t 3
+timeout /t 3 >nul
 cls
 
 echo [?] VIDLL has been deleted
